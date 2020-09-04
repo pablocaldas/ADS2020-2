@@ -136,21 +136,19 @@ public class TelaPaciente extends javax.swing.JFrame {
             Pessoa.setAltura(Float.parseFloat(jTextFieldAltura.getText()));
             imc = Pessoa.calcularImc();
 
+            //O QUE SERÁ IMPRESSO NA TELA
             jTextAreaOutput.setText(String.format(
                     "DADOS DO PACIENTE\n"
-                    + "NOME: %s\n"
-                    + "PESO: %.1f\n"
-                    + "ALTURA: %.2f\n"
+                    + "NOME: %s\n\n"
                     + "IMC: %.1f\n"
                     + "DIAGNÓSTICO: %s",
                     Pessoa.getNome(),
-                    Pessoa.getPeso(),
-                    Pessoa.getAltura(),
                     imc,
                     Pessoa.calcularFaixaPeso(imc)));
 
             jTextAreaOutput.grabFocus();
         } catch (Exception e) {
+            
             //MENSAGEM DE ERRO
             JOptionPane.showMessageDialog(rootPane, e.getMessage(), "ERRO GRANDE NA TELA!", JOptionPane.ERROR_MESSAGE);
         }

@@ -64,16 +64,16 @@ public class Eleitor {
         }
     }
 
+    //CALCULOS
+
     public String tipoEleitor() {
-        int idade = anoAtual - anoNacimento;
+        int idade = (anoAtual - getAnoNacimento());
         if (idade < 16) {
-            return "Não Eleitor";
-        } else if (idade <= 16 && idade < 18) {
-            return "Eleitor Facultativo";
-        } else if (idade >= 18 && idade <= 65) {
-            return "Eleitor Obrigatório";
+            return " Não Eleitor ";
+        } else if (idade < 18 && idade > 65) {
+            return " Eleitor Facultativo ";
         } else {
-            return "Eleitor Facultativo";
+            return "Eleitor Obrigatório";
         }
     }
 }

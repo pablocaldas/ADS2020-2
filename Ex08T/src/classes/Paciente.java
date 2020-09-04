@@ -64,19 +64,20 @@ public class Paciente {
         }
         this.altura = altura;
     }
-
+    //CALCULO DO IMC
     public float calcularImc() {
         return (peso / (altura * altura));
     }
 
+    //CALCULO DA FAIXA DE PESO
     public String calcularFaixaPeso(float imc) {
-        if (imc < 20) {
+        if (imc < (float) 20) {
             return "ABAIXO DO PESO IDEAL";
-        } else if (imc < 25) {
+        } else if (imc < (float) 25) {
             return "PESO NORMAL";
-        } else if (imc < 30) {
+        } else if (imc < (float) 30) {
             return "EXCESSO DE PESO";
-        } else if (imc < 35) {
+        } else if (imc < (float) 35) {
             return "OBESIDADE";
         } else {
             return "OBESIDADE MÓRBIDA";
